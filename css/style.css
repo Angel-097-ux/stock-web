@@ -140,3 +140,46 @@ td { padding: 12px; border-bottom: 1px solid var(--border); font-size: 14px; }
     body { padding: 40px; }
     .dashboard-cards { grid-template-columns: 1fr 1fr; max-width: 600px; }
 }
+.neon-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -1px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.neon-title span {
+    color: #00adb5; /* El celeste de tu marca */
+    text-shadow: 0 0 15px rgba(0, 173, 181, 0.8);
+}
+
+.sub-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: -5px;
+}
+
+.sub-brand p {
+    font-size: 0.8rem;
+    color: #888;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
+/* El punto verde de "Conectado" */
+.pulse-icon {
+    width: 6px;
+    height: 6px;
+    background-color: #39ff14;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #39ff14;
+    animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
