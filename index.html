@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>STOCK-ANGEL // N.PEDIDOS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .search-container { margin: 15px 0; width: 100%; }
+        #input-busqueda {
+            width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #333;
+            background: #1a1a1a; color: white; font-size: 16px; outline: none;
+        }
+        #input-busqueda:focus { border-color: #00adb5; box-shadow: 0 0 10px rgba(0, 173, 181, 0.3); }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="brand">
+                <h1>STOCK-ANGEL</h1>
+                <span class="badge">N.STOCK v1.0</span>
+            </div>
+            <nav>
+                <button id="btn-nueva-entrada" class="btn-primary">+ Entrada</button>
+                <button id="btn-nueva-salida" class="btn-secondary">- Salida</button>
+            </nav>
+        </header>
+
+        <main>
+            <section class="dashboard-cards">
+                <div class="card">
+                    <p>Total Artículos</p>
+                    <h2 id="total-articulos">0</h2>
+                </div>
+                <div class="card">
+                    <p>Valor de Inventario</p>
+                    <h2 id="valor-total">$ 0</h2>
+                </div>
+            </section>
+
+            <section class="search-container">
+                <input type="text" id="input-busqueda" placeholder="🔍 Buscar por artículo, SKU o color...">
+            </section>
+
+            <section class="table-container">
+                <table id="tabla-stock">
+                    <thead>
+                        <tr>
+                            <th>SKU</th> <th>Artículo</th> <th>Talle</th> <th>Color</th> <th>Stock</th> <th>Precio Un.</th> <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-productos"></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <div id="modal-entrada" class="modal">
+        <div class="modal-content">
+            <h2>Nueva Entrada de Stock</h2>
+            <form id="form-entrada">
+                <input type="text" id="sku-input" placeholder="SKU (ej: MED-COA)" required>
+                <input type="text" id="nombre-input" placeholder="Artículo" required>
+                <input type="text" id="talle-input" placeholder="Talle">
+                <input type="text" id="color-input" placeholder="Color (ej: Azul, Negro, Surtido)"> 
+                <input type="number" id="cantidad-input" placeholder="Cantidad" required>
+                <input type="number" id="precio-input" placeholder="Precio Costo" required>
+                <div class="modal-actions">
+                    <button type="button" id="btn-cerrar" class="btn-secondary">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar Entrada</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
